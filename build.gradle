@@ -1,0 +1,69 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.7.RELEASE'
+	}
+
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		maven { url "http://repo.spring.io/release" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+group = 'com.sample'
+version = '0.0.1-SNAPSHOT'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': description,
+                   'Implementation-Version': version
+    }
+}
+
+description = "Spring Boot template project 2017"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    springfoxSwaggerVersion = '2.7.0'
+    junitJupiter = '5.0.1'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.data:spring-data-rest-webmvc")
+    compile("org.springframework.data:spring-data-rest-hal-browser")
+	compile("org.springframework.boot:spring-boot-starter-security")
+	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+	compile("io.springfox:springfox-swagger2:${springfoxSwaggerVersion}")
+	compile("io.springfox:springfox-swagger-ui:${springfoxSwaggerVersion}")
+	compile group: 'com.h2database', name: 'h2'
+	
+	testCompile("io.springfox:springfox-staticdocs:2.6.1")
+	testCompile("org.springframework.boot:spring-boot-starter-test")
+	testCompile("com.github.sbrannen:spring-test-junit5:1.0.0")
+	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiter}")
+	testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiter}")
+	testCompile("org.junit.platform:junit-platform-runner:1.0.1")
+}
+
+mainClassName = 'sample.Application'  
