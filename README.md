@@ -1,14 +1,14 @@
-# SpringBoot2017
+# SpringBoot2018
 
 This is a template project to build with Maven or Gradle. It uses Spring Data for H2 and runs with Spring Boot.
 
 Its core components are:
-- Spring Boot 1.5;
-- Jackson Databind 2.8 with JSR310 support;
+- Spring Boot 2.0;
+- Jackson Databind 2.9 with JSR310 support;
 - sl4j/Logback;
-- Spring Data 1.11;
-- Springfox swagger 2.7;
-- Java 8.
+- Spring Data 2;
+- Springfox swagger 2.8;
+- Java 10.
 
 There is a repository level that extends Repository interface in Spring Data, no actual implementation is needed. Service layer is omitted. 
 
