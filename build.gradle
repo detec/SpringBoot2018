@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.7.RELEASE'
+		springBootVersion = '2.0.0.RELEASE'
 	}
 
 	repositories {
@@ -31,11 +31,11 @@ jar {
 
 description = "Spring Boot template project 2017"
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 10
+targetCompatibility = 10
 
 ext {
-    springfoxSwaggerVersion = '2.7.0'
+    springfoxSwaggerVersion = '2.8.0'
     junitJupiter = '5.0.1'
 }
 
