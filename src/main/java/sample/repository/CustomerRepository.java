@@ -54,7 +54,7 @@ public interface CustomerRepository extends Repository<Customer, Long> {
      * @return Stream of instances
      */
     @Query("select c from Customer c")
-    List<Customer> ListAllCustomers();
+    List<Customer> listAllCustomers();
 
     /**
      *
