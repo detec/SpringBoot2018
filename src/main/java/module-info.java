@@ -1,8 +1,7 @@
 module SampleBoot {
-    requires java.xml.bind;
     requires javax.transaction.api;
     requires com.fasterxml.jackson.databind;
-    // requires javax.servlet.http;
+    requires javax.servlet.api;
     requires hibernate.jpa;
     requires spring.beans;
     requires spring.core;

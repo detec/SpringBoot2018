@@ -1,6 +1,3 @@
-/**
- *
- */
 package sample.util;
 
 import javax.servlet.http.HttpServletRequest;
