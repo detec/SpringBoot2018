@@ -54,13 +54,13 @@ public class CustomerController {
 	@GetMapping("{id}")
 	ResponseEntity<Customer> getCustomerById(
             @PathVariable String id) {
-        return repository.findOne(Long.valueOf(id)).map(cust -> new ResponseEntity<>(cust, HttpStatus.OK))
+        return repository.findById(Long.valueOf(id)).map(cust -> new ResponseEntity<>(cust, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 	@DeleteMapping("{id}")
     ResponseEntity<Customer> deleteCustomer(@PathVariable String id) {
-        Customer entity = repository.findOne(Long.valueOf(id))
+        Customer entity = repository.findById(Long.valueOf(id))
                 .orElseThrow(() -> new IllegalArgumentException("Customer not found with id: " + id));
         repository.delete(entity);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);

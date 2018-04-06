@@ -6,23 +6,13 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.scheduling.annotation.Async;
 
 import sample.domain.Customer;
 
-public interface CustomerRepository extends Repository<Customer, Long> {
+public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long> {
 
-    /**
-     *
-     * Special customization of
-     * {@link CrudRepository#findOne(java.io.Serializable)} to return a JDK 8
-     * {@link Optional}.
-     *
-     * @param id
-     * @return Optional of customer
-     */
-    Optional<Customer> findOne(Long id);
 
     /**
      *
@@ -66,7 +56,5 @@ public interface CustomerRepository extends Repository<Customer, Long> {
 
     @Async
     CompletableFuture<List<Customer>> readAllBy();
-
-    <S extends Customer> void delete(S customer);
 
 }
